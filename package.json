@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "enzyme": "^2.8.2",
+    "enzyme-to-json": "^1.5.1",
     "pa11y": "^4.10.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
@@ -10,11 +12,16 @@
     "styled-components": "^2.0.0"
   },
   "devDependencies": {
+    "npm-run-all": "^4.0.2",
+    "react-addons-test-utils": "^15.5.1",
     "react-scripts": "1.0.7"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "rename": "mv build/index.html build/200.html",
+    "surge": "surge ./build --domain codestorms-youtube-app.surge.sh",
+    "deploy": "run-s build rename surge",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
