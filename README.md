@@ -1,5 +1,6 @@
 # Codestorms-Youtube-App
 ![travis](https://travis-ci.org/Samatar26/codestorms-youtube-app.svg?branch=staging)
+[![codecov](https://codecov.io/gh/Samatar26/codestorms-youtube-app/branch/staging/graph/badge.svg)](https://codecov.io/gh/Samatar26/codestorms-youtube-app)
 
 ### Hosting your React App on a domain
 Because the React app doesn't have a backend, you can't host your app on something like Heroku.
