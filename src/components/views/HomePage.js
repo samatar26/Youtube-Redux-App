@@ -2,12 +2,20 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchTopVideos } from './../../actions/index';
+import TopVideos from './../TopVideos';
 import { MainContent } from './../base/MainContent';
-import { HomeTitle, HomeInput, HomeButton, HomeForm } from './../base/Home';
+import {
+  HomeTitle,
+  HomeInput,
+  HomeButton,
+  HomeForm,
+  HomeTopVideos,
+} from './../base/Home';
 
 class HomePage extends Component {
   constructor(props) {
     super(props);
+    this.props.fetchTopVideos();
     this.state = { term: '' };
   }
 
@@ -18,10 +26,6 @@ class HomePage extends Component {
   handleSubmit = ev => {
     ev.preventDefault();
   };
-
-  componentWillMount() {
-    this.props.fetchTopVideos();
-  }
 
   render() {
     console.log(this.props);
@@ -38,6 +42,9 @@ class HomePage extends Component {
           />
           <HomeButton type="submit">Search</HomeButton>
         </HomeForm>
+        <HomeTopVideos>
+          {this.props.topVideos.map(video => <TopVideos video={video} />)}
+        </HomeTopVideos>
       </MainContent>
     );
   }

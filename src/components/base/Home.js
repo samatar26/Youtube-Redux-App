@@ -41,3 +41,10 @@ export const HomeButton = styled.button`
     outline: none;
   }
 `;
+
+export const HomeTopVideos = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+`;
