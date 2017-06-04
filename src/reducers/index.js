@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
+import TopVideosReducer from './reducer_topvideos';
 
 const rootReducer = combineReducers({
-  state: (state = {}) => state,
+  topVideos: TopVideosReducer,
 });
 
 export default rootReducer;
