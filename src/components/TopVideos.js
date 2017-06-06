@@ -5,7 +5,6 @@ import {
 } from './../components/base/TopVideos';
 
 const TopVideos = ({ video }) => {
-  console.log(video);
   const imageUrl = video.snippet.thumbnails.default.url;
   return (
     <TopVideoContainer>

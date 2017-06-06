@@ -2,7 +2,10 @@ import styled from 'styled-components';
 
 export const TopVideoContainer = styled.article`
   display: flex;
+  min-width: 18em;
+  flex: 1;
   align-items: center;
+  justify-content: space-between;
   box-sizing: border-box;
   padding: 1em;
   width:50%;

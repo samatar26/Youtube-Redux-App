@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchTopVideos } from './../../actions/index';
+import { fetchTopVideos, searchVideos } from './../../actions/index';
 import TopVideos from './../TopVideos';
 import { MainContent } from './../base/MainContent';
 import {
@@ -25,13 +25,14 @@ class HomePage extends Component {
 
   handleSubmit = ev => {
     ev.preventDefault();
+    this.props.searchVideos(this.state.term);
   };
 
   render() {
     console.log(this.props);
     return (
       <MainContent>
-        <HomeTitle>Search your favourite videos</HomeTitle>
+        <HomeTitle>Top videos of the past 24 hours</HomeTitle>
         <HomeForm onSubmit={this.handleSubmit}>
           <HomeInput
             required
@@ -39,6 +40,7 @@ class HomePage extends Component {
             name="searchTerm"
             value={this.state.term}
             onChange={this.handleInputChange}
+            placeholder="Search Youtube Videos"
           />
           <HomeButton type="submit">Search</HomeButton>
         </HomeForm>
@@ -50,12 +52,15 @@ class HomePage extends Component {
   }
 }
 
-function mapStateToProps({ topVideos }) {
-  return { topVideos };
+function mapStateToProps({ topVideos, searchVideos }) {
+  return { topVideos, searchVideos };
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchTopVideos: fetchTopVideos }, dispatch);
+  return bindActionCreators(
+    { fetchTopVideos: fetchTopVideos, searchVideos: searchVideos },
+    dispatch
+  );
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
