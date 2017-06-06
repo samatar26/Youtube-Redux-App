@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const TopVideoContainer = styled.article`
   display: flex;
@@ -15,6 +16,15 @@ export const TopVideoContainer = styled.article`
    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
  }
 
+`;
+
+export const TopVideoLink = styled(Link)`
+  text-decoration: none;
+  color: black;
+  display: flex;
+  flex: 1;
+  min-width: 18em;
+  width: 50%;
 `;
 
 export const TopVideoSnippet = styled.img`
