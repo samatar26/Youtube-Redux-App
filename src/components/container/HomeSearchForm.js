@@ -21,7 +21,6 @@ class HomeSearchForm extends Component {
   };
 
   render() {
-    console.log(this);
     return (
       <HomeForm onSubmit={this.handleSubmit}>
         <HomeInput
@@ -39,7 +38,6 @@ class HomeSearchForm extends Component {
 }
 
 function mapStateToProps({ searchVideosResult }) {
-  console.log(searchVideosResult);
   return { searchVideosResult };
 }
 

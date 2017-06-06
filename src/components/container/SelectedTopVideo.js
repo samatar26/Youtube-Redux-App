@@ -16,7 +16,6 @@ class VideoDetail extends Component {
   render() {
     const url = `https://www.youtube.com/embed/${this.props.selectedVideo[0].id
       .videoId}`;
-    console.log(this.props.selectedVideo);
     return (
       <VideoDetailContainer>
         <VideoDetailTitle>
