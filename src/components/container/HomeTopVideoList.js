@@ -14,9 +14,8 @@ class HomeTopVideoList extends Component {
   render() {
     return (
       <HomeTopVideos>
-        {this.props.topVideos.map(video => {
+        {this.props.searchVideosResult.map(video => {
           const videoId = video.id.videoId;
-          console.log(this);
           return (
             <TopVideo key={video.id.videoId} videoUrl={videoId} video={video} />
           );
@@ -26,8 +25,8 @@ class HomeTopVideoList extends Component {
   }
 }
 
-function mapStateToProps({ topVideos }) {
-  return { topVideos };
+function mapStateToProps({ searchVideosResult }) {
+  return { searchVideosResult };
 }
 
 function mapDispatchToProps(dispatch) {

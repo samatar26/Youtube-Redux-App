@@ -6,6 +6,7 @@ const baseUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxRe
 
 export const FETCH_TOPVIDEOS = 'FETCH_TOPVIDEOS';
 export const SEARCHVIDEOS = 'SEARCHVIDEOS';
+export const SELECTEDVIDEO = 'SELECTEDVIDEO';
 
 export function fetchTopVideos() {
   const request = fetch(baseUrl).then(response => response.json());
@@ -16,11 +17,17 @@ export function fetchTopVideos() {
 }
 
 export function searchVideos(term) {
-  const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=s${term}&key=${API_KEY}`;
+  const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=s${term}&maxResults=12&relevanceLanguage=en&regionCode=gb&key=${API_KEY}`;
   const request = fetch(url).then(response => response.json());
-  console.log(request, term);
   return {
     type: SEARCHVIDEOS,
     payload: request,
+  };
+}
+
+export function selectedVideo(video) {
+  return {
+    type: SELECTEDVIDEO,
+    payload: video,
   };
 }

@@ -1,21 +1,41 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
   TopVideoContainer,
   TopVideoSnippet,
   TopVideoLink,
 } from './../components/base/TopVideos';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { Link } from 'react-router-dom';
+import { selectedVideo } from './../actions/index';
 
-const TopVideo = ({ video, videoUrl }) => {
-  const imageUrl = video.snippet.thumbnails.default.url;
-  return (
-    <TopVideoLink to={`/video-detail-${video.id.videoId}`}>
-      <TopVideoContainer>
-        <span>{video.snippet.title}</span>
-        <TopVideoSnippet src={imageUrl} />
-      </TopVideoContainer>
-    </TopVideoLink>
-  );
-};
+class TopVideo extends Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    const imageUrl = this.props.video.snippet.thumbnails.default.url;
+    return (
+      <TopVideoLink
+        onClick={() => {
+          this.props.selectedVideo(this.props.video);
+        }}
+        to={`/video-detail-${this.props.video.id.videoId}`}
+      >
+        <TopVideoContainer>
+          <span>{this.props.video.snippet.title}</span>
+          <TopVideoSnippet src={imageUrl} />
+        </TopVideoContainer>
+      </TopVideoLink>
+    );
+  }
+}
+function mapStateToProps({ selectedVideo }) {
+  return { selectedVideo };
+}
 
-export default TopVideo;
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ selectedVideo: selectedVideo }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(TopVideo);

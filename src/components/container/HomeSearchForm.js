@@ -17,9 +17,11 @@ class HomeSearchForm extends Component {
   handleSubmit = ev => {
     ev.preventDefault();
     this.props.searchVideos(this.state.term);
+    this.setState({ term: '' });
   };
 
   render() {
+    console.log(this);
     return (
       <HomeForm onSubmit={this.handleSubmit}>
         <HomeInput
@@ -36,8 +38,9 @@ class HomeSearchForm extends Component {
   }
 }
 
-function mapStateToProps({ searchVideos }) {
-  return { searchVideos };
+function mapStateToProps({ searchVideosResult }) {
+  console.log(searchVideosResult);
+  return { searchVideosResult };
 }
 
 function mapDispatchToProps(dispatch) {
