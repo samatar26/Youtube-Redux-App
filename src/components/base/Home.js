@@ -24,7 +24,13 @@ export const HomeInput = styled.input`
       box-shadow: 0 0 0 2px palevioletred;
     }
 `;
+export const HomeButtonContainer = styled.section`
+  display: flex;
+  justify-content: space-between;
+  align-items: center:
 
+    break;
+`;
 export const HomeButton = styled.button`
   display: inline-block;
   padding: 0.5em 1em;
@@ -40,4 +46,11 @@ export const HomeButton = styled.button`
   &:focus{
     outline: none;
   }
+`;
+
+export const HomeTopVideos = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
 `;

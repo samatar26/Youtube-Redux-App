@@ -6,8 +6,11 @@
 
 html {
   box-sizing: border-box;
-  background-color: rgb(255, 255, 255)
+  background-color: rgb(255, 255, 255);
+
 }
+
+
 
 body,
 h1,
@@ -17,6 +20,7 @@ h4,
 p,
 figure,
 ul {
+  
   margin: 0;
   padding: 0;
 }
