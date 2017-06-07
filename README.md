@@ -1,6 +1,5 @@
-# Codestorms-Youtube-App
+# Youtube Redux App
 ![travis](https://travis-ci.org/Samatar26/codestorms-youtube-app.svg?branch=staging)
-[![codecov](https://codecov.io/gh/Samatar26/codestorms-youtube-app/branch/staging/graph/badge.svg)](https://codecov.io/gh/Samatar26/codestorms-youtube-app)
 
 An app using the youtube Api which allows you to view the most watched videos of the past and also search through Youtube. https://www.codestorms-youtube-app.surge.sh
 
