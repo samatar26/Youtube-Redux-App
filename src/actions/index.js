@@ -29,7 +29,7 @@ export function fetchTopVideos() {
 }
 
 export function searchVideos(term) {
-  const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=s${term}&maxResults=12&relevanceLanguage=en&regionCode=gb&key=${API_KEY}`;
+  const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&&type=video&q=${term}&maxResults=12&relevanceLanguage=en&regionCode=gb&key=${API_KEY}`;
   const request = fetch(url).then(response => response.json());
   return {
     type: SEARCHVIDEOS,

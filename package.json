@@ -15,9 +15,11 @@
     "styled-components": "^2.0.0"
   },
   "devDependencies": {
+    "nock": "^9.0.13",
     "npm-run-all": "^4.0.2",
     "react-addons-test-utils": "^15.5.1",
-    "react-scripts": "1.0.7"
+    "react-scripts": "1.0.7",
+    "redux-mock-store": "^1.2.3"
   },
   "scripts": {
     "start": "react-scripts start",
